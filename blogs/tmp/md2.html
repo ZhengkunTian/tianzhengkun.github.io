@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Generic - Editorial by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo">Stay Hungry. Stay Foolish.</a>
+								</header>
+
+                <!-- <div>
+                  <textarea id="content", style="display:none;">
+                  </textarea>
+                  <div id="result"></div>
+                </div> -->
+
+		            <div id="test-editormd-view">
+		               <textarea style="display:none;" name="test-editormd-markdown-doc">###Hello world!</textarea>
+		            </div>
+		            <div id="test-editormd-view2">
+		                <textarea id="append-test" style="display:none;">
+
+###科学公式 TeX(KaTeX)
+
+$$E=mc^2$$
+
+行内的公式$$E=mc^2$$行内的公式，行内的$$E=mc^2$$公式。
+
+$$\(\sqrt{3x-1}+(1+x)^2\)$$
+
+$$\sin(\alpha)^{\theta}=\sum_{i=0}^{n}(x^i + \cos(f))$$
+
+$$X^2 > Y$$
+
+#####上标和下标
+
+上标：X&lt;sup&gt;2&lt;/sup&gt;
+
+下标：O&lt;sub&gt;2&lt;/sub&gt;
+
+##### 代码块里包含的过滤标签及属性不会被过滤
+
+```html
+&lt;style type="text/style"&gt;
+body{background:red;}
+&lt;/style&gt;
+
+&lt;script type="text/javscript"&gt;
+alert("script");
+&lt;/script&gt;
+
+&lt;iframe height=498 width=510 src="http://player.youku.com/embed/XMzA0MzIwMDgw" frameborder=0 allowfullscreen&gt;&lt;/iframe&gt;
+```
+
+#####Style
+
+&lt;style&gt;
+body{background:red;}
+&lt;/style&gt;
+
+&lt;style type="text/style"&gt;
+body{background:red;}
+&lt;/style&gt;
+
+#####Script
+
+&lt;script&gt;
+alert("script");
+&lt;/script&gt;
+
+&lt;script type="text/javscript"&gt;
+alert("script");
+&lt;/script&gt;
+									</textarea>
+		            </div>
+
+
+				        <script src="../../assets/js/jquery.min.js"></script>
+				        <script src="../../assets/lib/marked.min.js"></script>
+				        <script src="../../assets/lib/prettify.min.js"></script>
+
+				        <script src="../../assets/lib/raphael.min.js"></script>
+				        <script src="../../assets/lib/underscore.min.js"></script>
+				        <script src="../../assets/lib/sequence-diagram.min.js"></script>
+				        <script src="../../assets/lib/flowchart.min.js"></script>
+				        <script src="../../assets/lib/jquery.flowchart.min.js"></script>
+
+				        <script src="../../assets/lib/editormd.js"></script>
+				        <script type="text/javascript">
+				            $(function() {
+				                var testEditormdView, testEditormdView2;
+
+				                $.get("test.md", function(markdown) {
+
+								    testEditormdView = editormd.markdownToHTML("test-editormd-view", {
+				                        markdown        : markdown ,//+ "\r\n" + $("#append-test").text(),
+				                        //htmlDecode      : true,       // 开启 HTML 标签解析，为了安全性，默认不开启
+				                        htmlDecode      : "style,script,iframe",  // you can filter tags decode
+				                        //toc             : false,
+				                        tocm            : true,    // Using [TOCM]
+				                        //tocContainer    : "#custom-toc-container", // 自定义 ToC 容器层
+				                        //gfm             : false,
+				                        //tocDropdown     : true,
+				                        // markdownSourceCode : true, // 是否保留 Markdown 源码，即是否删除保存源码的 Textarea 标签
+				                        emoji           : true,
+				                        taskList        : true,
+				                        tex             : true,  // 默认不解析
+				                        flowChart       : true,  // 默认不解析
+				                        sequenceDiagram : true,  // 默认不解析
+				                    });
+
+				                    //console.log("返回一个 jQuery 实例 =>", testEditormdView);
+
+				                    // 获取Markdown源码
+				                    //console.log(testEditormdView.getMarkdown());
+
+				                    //alert(testEditormdView.getMarkdown());
+				                });
+
+				                testEditormdView2 = editormd.markdownToHTML("test-editormd-view2", {
+				                    htmlDecode      : "style,script,iframe",  // you can filter tags decode
+				                    emoji           : true,
+				                    taskList        : true,
+				                    tex             : true,  // 默认不解析
+				                    flowChart       : true,  // 默认不解析
+				                    sequenceDiagram : true,  // 默认不解析
+				                });
+				            });
+				        </script>
+
+                <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+                <script>
+
+                  var text = document.getElementById("content").value;
+                  document.getElementById("result").innerHTML = marked(text);
+
+                </script>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/browser.min.js"></script>
+			<script src="../../assets/js/breakpoints.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<script src="../../assets/js/main.js"></script>
+
+	</body>
+</html>
